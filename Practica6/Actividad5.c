@@ -2,7 +2,7 @@
 
 
 int main() {
- 
+ //Este programa imprime los secuencias de escape para el comando printf
   printf("\\a carácter de alarma \n");
   printf("\\b retroceso \n");
   printf("\\f avance de hoja\n");
