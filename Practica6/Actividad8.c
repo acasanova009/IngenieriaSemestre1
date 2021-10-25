@@ -3,13 +3,16 @@
 #include <math.h>
 
 int main(int argc, char){
+    
     int a = 9-5-3;
     printf("El valor de a es %d\n",a);
     
-    double b = div(2,3).quot + (3.0 /5.0) ;
+    // La operación  2 div 3 + 3 / 5 es incorrect.
+    // Pero al modificarla a lo siguiente, si funciona.
+    double b = div(2,3).quot + (3.0/5.0) ;
     printf("El valor de b %f \n",b);
     
-    double c =  div(9,2).quot + 5;
+    double c =  div(9,2).quot / 5.0;
     printf("El valor de c %f \n",c);
 
     double d = 7 % 5 % 3;
@@ -36,10 +39,7 @@ int main(int argc, char){
     double k = trunc(815) + round(815);
     printf("El valor de k %f\n",k);
 
-
-
     
-
 
     return 0;
 }
