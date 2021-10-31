@@ -22,7 +22,7 @@ int main(int argc, char){
     printf("El valor de e %f\n",e);
 
     double f = (7 % 5) % 3;
-    printf("El valor de f %f\n",f);
+    printf("El valor de f %f\n",f); 
 
     double g = (7 % 5 % 3);
     printf("El valor de g %f\n",g);
@@ -39,7 +39,10 @@ int main(int argc, char){
     double k = trunc(815) + round(815);
     printf("El valor de k %f\n",k);
 
-    
+    double m = 7;
+    printf("El valor de m %f\n",m);
+
+   
 
     return 0;
 }
