@@ -8,7 +8,8 @@ int main() {
     float gradoDelTriangulo = 0.0;
     char * tipoDeGrado = "Nada";
 
-    // En esta estructura se va a definir el valor de la Letra conforme a la calificación leida, siguiendo el sistema americano de calificación.
+    // En esta estructura se va a definir el valor de la Letra conforme a la calificación leida.
+    // Siguiendo el sistema americano de calificación.
     printf("Ingresar el grado a corroborar\n");
     scanf("%f", &gradoDelTriangulo);
 

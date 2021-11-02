@@ -29,8 +29,7 @@ int main() {
 
     }
 
-
-
+    // Al final le entregamos al usuario la letra final.
 
     printf("La letra es %c\n", letraFinal);
     

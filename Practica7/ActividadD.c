@@ -6,7 +6,8 @@ int main() {
     ent1 =0;
     ent2 =0;
     ent3 =0;
-    // Primero verificamos si son diferentes, de otra manera pedimos que vuelva a intentar ingresar 3 enteros diferentes.
+    // Primero verificamos si son diferentes.
+    // De otra manera pedimos que vuelva a intentar ingresar 3 enteros diferentes.
 
     while (ent1==ent2 || ent2==ent3 || ent3==ent1)
     {
@@ -31,3 +32,4 @@ int main() {
     
     return 0;
 }
+
