@@ -12,7 +12,9 @@ int main() {
     {
         printf("Ingresar tres enteros diferentes.\n");
         scanf("%d",&ent1);
+        printf("Ingresar el segundo.\n");
         scanf("%d",&ent2);
+        printf("Ingresar el tercero.\n");
         scanf("%d",&ent3);
     }
 
