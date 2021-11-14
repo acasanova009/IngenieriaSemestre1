@@ -13,6 +13,8 @@ int main() {
     printf("Ingresar el segundo numero\n");
     scanf("%d", &y);
 
+    // CAMBIAR POR UN WHILE
+    
     for (int i = 1; i <=10; i++){
         printf("\n\nTabla del %d:\n", i);
         printf("Primer dígito por %d, es %d:\n", i, i*x);

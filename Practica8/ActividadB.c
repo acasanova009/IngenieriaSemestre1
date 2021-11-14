@@ -10,13 +10,15 @@ int main() {
     printf("Ingresar el segundo numero\n");
     scanf("%d", &y);
 
-    float multipliacion = 1;
+    float multipliacion = 1.0f;
     int count = 0;
     while (count <y)
     {
         multipliacion = multipliacion * x; 
 
         count++;
+
+    
     }
     
     printf("%f", multipliacion);
