@@ -62,7 +62,6 @@ int main() {
 
         }
     }
-    //Imprimir la diagonal de estos datos 
     for (int n=0;n<N;n++){
         for (int m=0; m<M; m++) {
             printf("[%.1f]", randoms[n][m]);
@@ -83,11 +82,17 @@ int main() {
 
     for (int i = 0; i < 30; i++){
         printf("\nLas calificaciones finales del alumno #: %d son:\n", i);
-
+        float suma = 0.0f;
+        float promedio = 0.0f;
         for (int j = 0; j <5; j++){
             calificaciones[i][j] =(rand()%(upper - lower + 1)) + lower;
             printf("Materia %d: Calif: %2.0f.  ", j+1, calificaciones[i][j]);  
+            suma += calificaciones[i][j];
+            
+
         }
+        promedio = suma/5.0f;
+        printf("\nPromedio %0.2f\n",promedio);
         printf("\n");
     }
 
@@ -145,10 +150,6 @@ int main() {
         printf("\n"); 
         printf("\n"); 
 
-
-    //Finalmente cambiarmos el puntero;
-
-
     for (int i = 0; i <M; i++){
             for (int j = 0; j <N; j++){
             
@@ -159,9 +160,7 @@ int main() {
             printf("\n"); 
         }
        
-   
-
-
+      
    return 0;
 
 }
