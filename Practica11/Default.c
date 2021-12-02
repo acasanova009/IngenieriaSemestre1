@@ -4,6 +4,7 @@
 #include <math.h>
 
 
+
 void imprimirCuadrado(int lado);
 void imprimirCuadradoConCaracter(int lado, char c);
 void mayorDeDosNumeros(int num1, int num2);
