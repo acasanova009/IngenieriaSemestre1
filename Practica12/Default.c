@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdbool.h>
 
+#include <string.h>
 
 
 int getNumero(char caracter);
@@ -11,12 +12,30 @@ bool charEsSimbolo(char caracter);
 bool charEsNumero(char caracter);
 int evaluarDatos(int izq, char operacion,int der);
 
+char intToChar (int i);
+
+void concatenarCharToString(char c, char *cadena);
+
 int main()
 {
    FILE *archivo;
 
    char caracteres[50];
-   archivo = fopen("calculos.txt", "r");
+   archivo = fopen("calculos.txt", "r+");
+
+   int numeroDeLinea = 0;
+
+   char finalStream[7][50];
+
+   for (size_t i = 0; i < 7; i++)
+   {
+      for (size_t j = 0; j < 50; j++)
+      {
+         finalStream[7][50]= ' ';
+      }
+      
+   }
+   
 
 
 
@@ -24,7 +43,8 @@ int main()
    {
       printf("El archivo se abrió correctamenteABA.");
       printf("\nContenido del archivo:\n");
-      int i = 0;
+
+
       while (feof(archivo) == 0)
          {   
 
@@ -32,12 +52,18 @@ int main()
          int enteroDer = -1;
          char operacion = ' ';
          int numeroFinal = -1;
+         char cadenaPorEscribir[50];
+         for (size_t i = 0; i < 50; i++)
+            cadenaPorEscribir[i] = 0;
+         
 
             fgets (caracteres, 50, archivo);
                // printf("%s fin", caracteres);
 
             for (int j = 0; j < 50; j++){
-               char currentChar  = *(caracteres+j);               if (currentChar == '\n' || currentChar == '\000'){
+               char currentChar  = *(caracteres+j);
+               
+               if (currentChar == '\n' || currentChar == '\000'){
                   // Reniciar el valor de la correpondiente operacion;
                   break;
                }
@@ -63,10 +89,35 @@ int main()
 
                            numeroFinal = evaluarDatos(enteroIzq, operacion, enteroDer);
                            //  printf("Op:%i \n", numeroFinal); 
+
                             char text[5]; 
                             sprintf(text, "%d", numeroFinal);
-                            printf("Op:%s \n",  text); 
+
+                            concatenarCharToString(' ', cadenaPorEscribir);
+                            concatenarCharToString(intToChar(enteroIzq), cadenaPorEscribir);
+                            concatenarCharToString(' ', cadenaPorEscribir);
+                            concatenarCharToString(operacion, cadenaPorEscribir);
+                            concatenarCharToString(' ', cadenaPorEscribir);
+                            concatenarCharToString(intToChar(enteroDer), cadenaPorEscribir);
+                            concatenarCharToString(' ', cadenaPorEscribir);
+                            concatenarCharToString('=', cadenaPorEscribir);
+                            concatenarCharToString(' ', cadenaPorEscribir);
+                            strcat(cadenaPorEscribir, text);
+                           
+
+                           for (size_t i = 0; i < 50; i++)
+                           {
+                              /* code */
+                              finalStream[numeroDeLinea][i]=cadenaPorEscribir[i];
+                           }
+                           
+                           
+
+                           // fputs()
+                           
+                           numeroDeLinea++;
                         }
+
                         
                         // printf("%c\n", currentChar); 
                   }
@@ -93,8 +144,26 @@ int main()
 
             }
 
-               i++;
+               
          }
+
+         fclose(archivo);
+         archivo = fopen("calculos.txt", "r+");
+
+      // while(!feof(archivo)==EOF)
+      numeroDeLinea = 0;
+      while (feof(archivo) == 0 )
+      {
+            
+            if(numeroDeLinea<4)
+            {
+               printf("%s \n",  finalStream[numeroDeLinea]); 
+               // fputs(finalStream[numeroDeLinea], archivo);
+            }
+            numeroDeLinea++;
+         
+      }
+         
          fclose(archivo);
    }
 
@@ -202,4 +271,19 @@ int evaluarDatos(int izq, char operacion,int der){
          break;
       }
       return operacionFinal; 
+}
+
+
+void concatenarCharToString(char c, char *cadena)
+{
+    char cadenaTemporal[2];
+    cadenaTemporal[0] = c;
+    cadenaTemporal[1] = '\0';
+    strcat(cadena, cadenaTemporal);
+}
+
+
+char intToChar (int i){
+   // char charVal = i +'0';
+   return i +'0';
 }

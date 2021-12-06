@@ -4,6 +4,11 @@
 
 int main(){
 
+
+    int a = 20;
+    int b = 50;
+    int c = a%b;
+    printf("C es: %d ", c);
     //Este programa comprueba la expresión de los valores [T/P]^N=T^N/P^N
     //Declaración de las variables
     int T,P,N;
