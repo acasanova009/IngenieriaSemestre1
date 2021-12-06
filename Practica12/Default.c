@@ -93,7 +93,7 @@ int main()
                             char text[5]; 
                             sprintf(text, "%d", numeroFinal);
 
-                            concatenarCharToString(' ', cadenaPorEscribir);
+                           //  concatenarCharToString(' ', cadenaPorEscribir);
                             concatenarCharToString(intToChar(enteroIzq), cadenaPorEscribir);
                             concatenarCharToString(' ', cadenaPorEscribir);
                             concatenarCharToString(operacion, cadenaPorEscribir);
