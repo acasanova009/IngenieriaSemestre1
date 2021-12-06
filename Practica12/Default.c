@@ -148,24 +148,34 @@ int main()
          }
 
          fclose(archivo);
-         archivo = fopen("calculos.txt", "r+");
-
-      // while(!feof(archivo)==EOF)
-      numeroDeLinea = 0;
-      while (feof(archivo) == 0 )
-      {
-            
-            if(numeroDeLinea<4)
-            {
-               printf("%s \n",  finalStream[numeroDeLinea]); 
-               // fputs(finalStream[numeroDeLinea], archivo);
-            }
-            numeroDeLinea++;
-         
-      }
-         
-         fclose(archivo);
    }
+        
+
+         FILE * stream = fopen("calculos.txt", "r+");
+         numeroDeLinea = 0;
+         if (stream != NULL)
+         {
+            // while(!feof(archivo)==EOF)
+            // numeroDeLinea = 0;
+            //  if(numeroDeLinea<4)
+            //       {
+            //       }
+            while (numeroDeLinea<4)
+            {
+                  printf("%s \n",  finalStream[numeroDeLinea]); 
+                  //  fputs(finalStream[numeroDeLinea], archivo);
+                  fprintf(stream, "%s \n",  finalStream[numeroDeLinea]);
+                  numeroDeLinea++;
+               /* code */
+            }
+            
+               
+            
+               
+            fclose(stream);
+
+         }
+
 
    // archivo = NULL;
    // char escribir[]= "Escribir cadena en archivo mediante fputs.\n tFacultad de Ingeniería.\n";
